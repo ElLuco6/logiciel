@@ -23,6 +23,7 @@
                                  <children>
                                     <Label fx:id="label1" text="Recherche de mise à jour des firmware :" />
                                     <Button fx:id="MAJ" mnemonicParsing="false" onAction="#handleDownloadButton" text="MAJ" />
+                                    <Button mnemonicParsing="false" onAction="#getFile" text="Read Write" />
                                  </children>
                               </HBox>
                               <Label fx:id="label" text="Choix du firmware :" />
@@ -30,7 +31,7 @@
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <Label fx:id="label2" text="Flasher :" />
-                                    <Button fx:id="MAJ1" mnemonicParsing="false" onAction="#handleDownloadButton" text="FLASHER CE FIRMWARE" />
+                                    <Button fx:id="flash" mnemonicParsing="false" onAction="#flash" text="FLASHER CE FIRMWARE" />
                                  </children>
                               </HBox>
                            </children>

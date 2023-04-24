@@ -65,27 +65,7 @@ public class JavaFXApplication8 extends Application {
         
 //        loadFXML();
     }
-    
 
-    
-//    private void loadFXML() throws IOException {
-//        FXMLLoader loader = new FXMLLoader();
-//        loader.setLocation(getClass().getResource("Button.fxml"));
-//        rootLayout = loader.load();
-//
-//        // Récupérer le bouton depuis le contrôleur
-//        ButtonController controller = loader.getController();
-//        Button myButton = controller.myButton;
-//
-//        
-//        BorderPane.setAlignment(myButton, Pos.TOP_RIGHT);
-//        // Ajouter le bouton au layout racine
-//        rootLayout.setTop(myButton);
-//    }
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }
