@@ -47,6 +47,7 @@ public class TestJavaFX18 extends Application {
         AnchorPane.setRightAnchor(webView, 0.0);
         AnchorPane.setBottomAnchor(webView, 0.0);
         AnchorPane.setLeftAnchor(webView, 0.0);
+        
 
         rootLayout.setCenter(webPane);
 

@@ -30,10 +30,13 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import com.fazecast.jSerialComm.SerialPort;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
+import javafx.scene.layout.BorderPane;
 
 /**
  *
@@ -43,75 +46,42 @@ public class JavaFXApplication8 extends Application {
     
     
     
-    Scene scene1, scene2;
+//    private BorderPane rootLayout;
     @Override
     public void start(Stage primaryStage) throws Exception {
         
         //Variables
         primaryStage.setTitle("PROJET_DESKTOP"); 
-       String saveDirectory = System.getProperty("user.dir") + "\\bins\\";
 
-        Button buttonHtmlFile = new Button("Get files");
-        Button buttonAccess = new Button("Access Device");
         
         FirmwareDownloader myClass = new FirmwareDownloader();
-        String url = "https://play.thingz.co/galaxia";
+        myClass.main(new String[]{});
+        
         
         Parent root = FXMLLoader.load(getClass().getResource ("FXMLDocument.fxml"));
         Scene scene0 = new Scene (root,800,600);
         primaryStage.setScene(scene0);
         primaryStage.show();
         
-        
-        myClass.main(new String[]{});
-       
-    
- 
-        File[] roots = File.listRoots();
-        File usbDevice = null;
-        
-        for (File roott : roots) {
-            if (roott.getPath().startsWith("/media/")) {  // Modify this condition as needed
-                usbDevice = roott;
-                break;
-            }
-        }
-        buttonHtmlFile.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-     
-            }
-        });
-        buttonAccess.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                
-                System.out.println("sans la librairie ");
-                for (int i = 0; i < roots.length; i++) {
-                    File root = roots[i];
-                    System.out.println("Root " + i + ": " + root.getAbsolutePath());
-                    System.out.println("Total space: " + root.getTotalSpace());
-                    System.out.println("Free space: " + root.getFreeSpace());
-                }
-                System.out.println("Avec la librairie ");
-                
-                SerialPort[] ports = SerialPort.getCommPorts();
-                System.out.println(ports.length);
-                for (SerialPort port : ports) {
-                        System.out.println("dans boucle ");
-                        System.out.println("System PortName : "+port.getSystemPortName());
-                        System.out.println("System PortPath: "+port.getSystemPortPath()); System.out.println("Port Location: "+port.getPortLocation()); System.out.println("Port Description: "+port.getPortDescription());
-                        System.out.println("Descriptive PortName : "+port.getDescriptivePortName());
-                        System.out.println("BaudRate : "+port.getBaudRate()); 
-                        System.out.println("‒‒‒‒‒‒‒");
-                }
-                System.out.println("Avec la librairie ");    
-            }
-        });
-        
-        
+//        loadFXML();
     }
+    
+
+    
+//    private void loadFXML() throws IOException {
+//        FXMLLoader loader = new FXMLLoader();
+//        loader.setLocation(getClass().getResource("Button.fxml"));
+//        rootLayout = loader.load();
+//
+//        // Récupérer le bouton depuis le contrôleur
+//        ButtonController controller = loader.getController();
+//        Button myButton = controller.myButton;
+//
+//        
+//        BorderPane.setAlignment(myButton, Pos.TOP_RIGHT);
+//        // Ajouter le bouton au layout racine
+//        rootLayout.setTop(myButton);
+//    }
 
     /**
      * @param args the command line arguments
